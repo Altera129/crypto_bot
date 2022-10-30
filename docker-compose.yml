@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+# MySQL
+  mysql:
+    build:
+        context: .
+        dockerfile: ./mysql/Dockerfile
+    image: "mysql:latest" 
+    container_name: mysql_container
+    ports:
+      - "3306:3306"
+    tty: true   
+
+# python3 
+  python3: 
+    build:
+      context: .
+      dockerfile: ./python/Dockerfile
+    image: "name001/pymysql"
+    container_name: pymysqlclient
+    tty: true
