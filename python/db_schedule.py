@@ -1,11 +1,11 @@
 import schedule
 from time import sleep
-import get_ohlcv_1min
-import get_orderbook_1min
+from . import get_ohlcv
+from . import get_orderbook
 
 def job_1min():
-    get_ohlcv_1min.main()
-    get_orderbook_1min.main()
+    get_ohlcv.main()
+    get_orderbook.main()
     
 if __name__ == "__main__":
     schedule.every(1).minutes.do(job_1min)
